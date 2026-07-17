@@ -8,9 +8,13 @@ This project predicts student performance using machine learning based on academ
 
 
 -python
+
 -flask-scikit-learn
+
 -pandas
+
 -HTML
+
 -CSS
 
 
