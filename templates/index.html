@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Predict Performance{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-5 border-0">
+    <div class="text-center mb-4">
+        <h2 class="text-primary fw-bold">🎓 Student Performance Prediction Portal</h2>
+        <p class="text-muted">Enter the academic metrics below to generate the performance risk assessment report.</p>
+    </div>
+
+    <form action="/predict" method="POST">
+        <!-- Section 1: Demographics -->
+        <h5 class="text-secondary fw-semibold mb-3 border-bottom pb-2">👤 Student Profile Details</h5>
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Student Full Name</label>
+                <input type="text" class="form-control form-control-lg shadow-sm" name="name" placeholder="Enter student's name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Roll Number</label>
+                <input type="text" class="form-control form-control-lg shadow-sm" name="roll" placeholder="Enter registration or roll number" required>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <label class="form-label fw-bold">Official Email Address</label>
+                <input type="email" class="form-control form-control-lg shadow-sm" name="email" placeholder="student@university.com" required>
+            </div>
+        </div>
+
+        <!-- Section 2: Core Academic Features -->
+        <h5 class="text-secondary fw-semibold mb-3 border-bottom pb-2">📊 Academic Analytics & Parameters</h5>
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Attendance (%)</label>
+                <input type="number" step="any" min="0" max="100" class="form-control form-control-lg shadow-sm" name="attendance" placeholder="e.g., 85" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Weekly Study Hours</label>
+                <input type="number" step="any" min="0" class="form-control form-control-lg shadow-sm" name="study" placeholder="e.g., 12" required>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Assignment Marks</label>
+                <input type="number" step="any" min="0" max="100" class="form-control form-control-lg shadow-sm" name="assignment" placeholder="Out of 100" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Quiz Marks</label>
+                <input type="number" step="any" min="0" max="100" class="form-control form-control-lg shadow-sm" name="quiz" placeholder="Out of 100" required>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Previous Semester Marks</label>
+                <input type="number" step="any" min="0" max="100" class="form-control form-control-lg shadow-sm" name="previous" placeholder="Out of 100" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Class Participation Score</label>
+                <input type="number" step="any" min="0" max="100" class="form-control form-control-lg shadow-sm" name="participation" placeholder="Out of 100" required>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-2">
+            <button class="btn btn-primary w-100 btn-lg shadow fw-bold py-3 fs-5">
+                🤖 Run AI Analytics & Predict
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

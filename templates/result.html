@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+
+<div class="card shadow-lg p-5 text-center">
+
+<h2 class="text-success">
+Prediction Result
+</h2>
+
+<hr>
+
+<h1 class="display-3 text-primary">
+{{ marks }}
+</h1>
+
+<h3>Grade : {{ grade }}</h3>
+
+<h3>Risk : {{ risk }}</h3>
+
+<br>
+
+<a href="/" class="btn btn-primary">
+Predict Again
+</a>
+
+</div>
+
+{% endblock %}
